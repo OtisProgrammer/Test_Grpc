@@ -1,0 +1,38 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ClientApp.Person";
+
+package person;
+
+// The greeting service definition.
+service People {
+  // Sends a greeting
+  rpc Get (GetRequest) returns (GetReply);
+  rpc Create (CreateRequest) returns (CreateReply);
+}
+
+
+
+// The request message containing the user's name.
+message GetRequest {
+  int32 id = 1;
+}
+message CreateRequest {
+  string FirstName=1;
+  string LastName=2;
+  string Mobile=3;
+  int32 Age=4;
+}
+
+// The response message containing the greetings.
+
+message GetReply {
+  int32 Id = 1;
+  string FirstName=2;
+  string LastName=3;
+  string Mobile=4;
+  int32 Age=5;
+}
+message CreateReply {
+int32 result=1;
+}
